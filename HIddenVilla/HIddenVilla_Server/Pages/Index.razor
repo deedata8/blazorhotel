@@ -1,0 +1,80 @@
+﻿
+@using Model
+
+@page "/"
+@*<h1>Hello, world!</h1>
+
+    Welcome to your new app.
+
+    <SurveyPrompt Title="How is Blazor working for you?" />*@
+
+<h2>
+    Room Price: @Room.Price
+</h2>
+
+<input type="number" @bind-value="@Room.Price" @bind-value:event="oninput" />
+
+<input type="checkbox" @bind-value="@Room.IsActive" checked="@(Room.IsActive? "checked" : null)" />
+
+<h3>
+    Room Status: @(Room.IsActive? "Active" : "Inactive")
+    <br />
+</h3>
+
+<select @bind="SelectedRoomProp">
+    @foreach (var prop in Room.RoomProps)
+    {
+        <option value="@prop.Name">@prop.Name</option>
+    }
+</select>
+<span>Selected @SelectedRoomProp</span>
+
+<ul>
+    @foreach (var item in RoomsList)
+    {
+        <li>@item.RoomName</li>
+    }
+</ul>
+
+@code{
+
+    string SelectedRoomProp = "";
+    List<BlazorRoom> RoomsList = new List<BlazorRoom>();
+
+    BlazorRoom Room = new BlazorRoom()
+    {
+        Id = 1,
+        RoomName = "Village Suite",
+        IsActive = true,
+        Price = 499,
+        RoomProps = new List<BlazorRoomProp>
+{
+            new BlazorRoomProp(){ Id=1, Name="Sq ft", Value="100" },
+            new BlazorRoomProp(){ Id=2, Name="Occupancy", Value="4" }
+
+        }
+    };
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        RoomsList.Add(Room);
+        RoomsList.Add(
+            new BlazorRoom()
+            {
+                Id = 2,
+                RoomName = "Executive Suite",
+                IsActive = true,
+                Price = 899,
+                RoomProps = new List<BlazorRoomProp>
+                {
+                    new BlazorRoomProp(){ Id=1, Name="Sq ft", Value="200" },
+                    new BlazorRoomProp(){ Id=2, Name="Occupancy", Value="6" }
+                }
+            });
+
+    }
+
+
+
+}
