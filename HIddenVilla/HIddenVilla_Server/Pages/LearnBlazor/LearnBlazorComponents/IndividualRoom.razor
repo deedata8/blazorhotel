@@ -1,0 +1,37 @@
+﻿<div class="bg-light border p-2 col-5 offset-1">
+    <input type="checkbox" @onchange="RoomCheckboxSelectionChanged" />
+    @room.RoomName
+    <br />
+    @room.Price.ToString("c")
+    <input type="checkbox" checked="@(room.IsActive?"checked":null)" @bind-value="room.IsActive" />
+    <br />
+    <span>Room is @(room.IsActive?"active":"inactive")</span>
+
+    @if (room.IsActive)
+    {
+        @foreach (var prop in room.RoomProps)
+        {
+            <p>@prop.Name - @prop.Value</p>
+
+        }
+    }
+    <EditDeleteButton IsAdmin="true"></EditDeleteButton>
+</div>
+
+@code {
+    //pass in prop from parent
+    [Parameter]
+    public BlazorRoom room { get; set; }
+
+    [Parameter]
+    //call parent component method, pass this prop to parent component- binding prop
+    public EventCallback<bool> OnRoomCheckboxSelection { get; set; }
+    //event method
+    protected async Task RoomCheckboxSelectionChanged(ChangeEventArgs e) 
+    {
+        //event value returns a bool as required by method in parent component
+        await OnRoomCheckboxSelection.InvokeAsync((bool)e.Value);
+    }
+
+
+}

@@ -80,6 +80,20 @@ using HIddenVilla_Server.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\_Imports.razor"
+using HIddenVilla_Server.Model;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\_Imports.razor"
+using HIddenVilla_Server.Pages.LearnBlazor.LearnBlazorComponents;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 3 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\FetchData.razor"
 using HIddenVilla_Server.Data;
 

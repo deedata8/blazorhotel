@@ -1,0 +1,15 @@
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.json
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.dev.json
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\bin\Debug\net5.0\DataAccess.dll
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\bin\Debug\net5.0\ref\DataAccess.dll
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\bin\Debug\net5.0\DataAccess.pdb
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\obj\Debug\net5.0\DataAccess.csprojAssemblyReference.cache
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\obj\Debug\net5.0\DataAccess.dll
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\obj\Debug\net5.0\DataAccess.pdb
+C:\Users\deidr\source\repos\blazor\HIddenVilla\DataAccess\obj\Debug\net5.0\DataAccess.genruntimeconfig.cache

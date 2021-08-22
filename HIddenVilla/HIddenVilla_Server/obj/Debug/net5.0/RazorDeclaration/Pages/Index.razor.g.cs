@@ -83,8 +83,15 @@ using HIddenVilla_Server.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\Index.razor"
-using Model;
+#line 11 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\_Imports.razor"
+using HIddenVilla_Server.Model;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\_Imports.razor"
+using HIddenVilla_Server.Pages.LearnBlazor.LearnBlazorComponents;
 
 #line default
 #line hidden
@@ -97,53 +104,6 @@ using Model;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 39 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\Index.razor"
-      
-
-    string SelectedRoomProp = "";
-    List<BlazorRoom> RoomsList = new List<BlazorRoom>();
-
-    BlazorRoom Room = new BlazorRoom()
-    {
-        Id = 1,
-        RoomName = "Village Suite",
-        IsActive = true,
-        Price = 499,
-        RoomProps = new List<BlazorRoomProp>
-{
-            new BlazorRoomProp(){ Id=1, Name="Sq ft", Value="100" },
-            new BlazorRoomProp(){ Id=2, Name="Occupancy", Value="4" }
-
-        }
-    };
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        RoomsList.Add(Room);
-        RoomsList.Add(
-            new BlazorRoom()
-            {
-                Id = 2,
-                RoomName = "Executive Suite",
-                IsActive = true,
-                Price = 899,
-                RoomProps = new List<BlazorRoomProp>
-                {
-                    new BlazorRoomProp(){ Id=1, Name="Sq ft", Value="200" },
-                    new BlazorRoomProp(){ Id=2, Name="Occupancy", Value="6" }
-                }
-            });
-
-    }
-
-
-
-
-#line default
-#line hidden
-#nullable disable
     }
 }
 #pragma warning restore 1591

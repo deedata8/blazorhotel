@@ -1,0 +1,12 @@
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\bin\Debug\net5.0\Models.deps.json
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\bin\Debug\net5.0\Models.dll
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\bin\Debug\net5.0\ref\Models.dll
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\bin\Debug\net5.0\Models.pdb
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\obj\Debug\net5.0\Models.csprojAssemblyReference.cache
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\obj\Debug\net5.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\obj\Debug\net5.0\Models.AssemblyInfoInputs.cache
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\obj\Debug\net5.0\Models.AssemblyInfo.cs
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\obj\Debug\net5.0\Models.csproj.CoreCompileInputs.cache
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\obj\Debug\net5.0\Models.dll
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\obj\Debug\net5.0\ref\Models.dll
+C:\Users\deidr\source\repos\blazor\HIddenVilla\Models\obj\Debug\net5.0\Models.pdb
