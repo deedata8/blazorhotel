@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business.Repository.IRepository
 {
-    interface IHotelRoomRepository
+    public interface IHotelRoomRepository
     {
         //create HotelRoom- return dto model
         public Task<HotelRoomDTO> CreateHotelRoom(HotelRoomDTO hotelRoomDTO);

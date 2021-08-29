@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace HIddenVilla_Server.Shared
+namespace HIddenVilla_Server.Pages.HotelRoom
 {
     #line hidden
     using System;
@@ -96,7 +96,22 @@ using HIddenVilla_Server.Pages.LearnBlazor.LearnBlazorComponents;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\HotelRoom\HoteRoomUpsert.razor"
+using Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\HotelRoom\HoteRoomUpsert.razor"
+using Business.Repository.IRepository;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/hotel-room/create")]
+    public partial class HoteRoomUpsert : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -104,20 +119,31 @@ using HIddenVilla_Server.Pages.LearnBlazor.LearnBlazorComponents;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Shared\NavMenu.razor"
+#line 53 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\HotelRoom\HoteRoomUpsert.razor"
        
-    private bool collapseNavMenu = true;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private HotelRoomDTO HotelRoomModel { get; set; } = new HotelRoomDTO();
+    private string Title { get; set; } = "Create";
 
-    private void ToggleNavMenu()
+    private async Task HandleHotelRoomUpsert()
     {
-        collapseNavMenu = !collapseNavMenu;
+        var roomDetailsByName = await HotelRoomRepository.IsRoomUnique(HotelRoomModel.Name);
+        if (roomDetailsByName != null)
+        {
+            return;
+        }
+        var createNewRoom = await HotelRoomRepository.CreateHotelRoom(HotelRoomModel);
+        NavigationManager.NavigateTo("hotel-room");
     }
+
+
+
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHotelRoomRepository HotelRoomRepository { get; set; }
     }
 }
 #pragma warning restore 1591

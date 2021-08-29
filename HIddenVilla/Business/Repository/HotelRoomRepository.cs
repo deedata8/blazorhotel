@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Business.Repository
 {
-    class HotelRoomRepository : IHotelRoomRepository
+    public class HotelRoomRepository : IHotelRoomRepository
     {
         //readonly - a constant that calcs at runtime
         private readonly ApplicationDbContext _db;
