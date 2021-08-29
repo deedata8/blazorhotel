@@ -119,7 +119,7 @@ using Business.Repository.IRepository;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 49 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\HotelRoom\HotelRoomList.razor"
+#line 52 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\HotelRoom\HotelRoomList.razor"
        
 
     private IEnumerable<HotelRoomDTO> HotelRooms { get; set; } = new List<HotelRoomDTO>();

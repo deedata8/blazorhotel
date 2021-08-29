@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace HIddenVilla_Server.Pages.HotelRoom
+namespace HIddenVilla_Server.Pages.LearnBlazor
 {
     #line hidden
     using System;
@@ -97,29 +97,14 @@ using HIddenVilla_Server.Pages.LearnBlazor.LearnBlazorComponents;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\HotelRoom\HoteRoomUpsert.razor"
-using Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\HotelRoom\HoteRoomUpsert.razor"
-using Business.Repository.IRepository;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\HotelRoom\HoteRoomUpsert.razor"
+#line 3 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\LearnBlazor\BlazorJS.razor"
 using HIddenVilla_Server.Helper;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/hotel-room/create")]
-    [Microsoft.AspNetCore.Components.RouteAttribute("/hotel-room/edit/{Id:int}")]
-    public partial class HoteRoomUpsert : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/blazorjs")]
+    public partial class BlazorJS : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -127,68 +112,48 @@ using HIddenVilla_Server.Helper;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 56 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\HotelRoom\HoteRoomUpsert.razor"
+#line 27 "C:\Users\deidr\source\repos\blazor\HIddenVilla\HIddenVilla_Server\Pages\LearnBlazor\BlazorJS.razor"
        
+    private string ConfirmMessage = "Are you sure you want to click?";
+    private bool ConfirmResult { get; set; }
 
-    [Parameter]
-    public int? Id { get; set; }
-
-    private HotelRoomDTO HotelRoomModel { get; set; } = new HotelRoomDTO();
-    private string Title { get; set; } = "Create";
-
-    protected override async Task OnInitializedAsync()
+    private async Task TestConfirmBox(string message)
     {
-        if (Id != null)
-        {
-            Title = "Update";
-            HotelRoomModel = await HotelRoomRepository.GetHotelRoom(Id.Value);
-        }
-        else
-        {
-            //create
-            HotelRoomModel = new HotelRoomDTO();
-        }
+        //name of function is "confirm"
+        ConfirmResult = await JsRuntime.InvokeAsync<bool>("confirm", message);
     }
 
-    private async Task HandleHotelRoomUpsert()
+    private async Task TestSuccess()
     {
-        try
-        {
-            var roomDetailsByName = await HotelRoomRepository.IsRoomUnique(HotelRoomModel.Name, HotelRoomModel.Id);
-            if (roomDetailsByName != null)
-            {
-                await JsRuntime.ToastrError("Room Name already exists.");
-                return;
-            }
-            if (HotelRoomModel.Id != 0 && Title == "Update")
-            {
-                var updateRoomResult = await HotelRoomRepository.UpdateHotelRoom(HotelRoomModel.Id, HotelRoomModel);
-                await JsRuntime.ToastrSuccess("Hotel room updated successfully.");
-            }
-            else
-            {
-                var createdResult = await HotelRoomRepository.CreateHotelRoom(HotelRoomModel);
-                await JsRuntime.ToastrSuccess("Hotel room created successfully.");
-            }
-        }
-        catch (Exception ex)
-        {
-            //log exceptions
-        }
+        //using common.js
+        //await JsRuntime.InvokeVoidAsync("ShowToastr", "success", "SUCCESS MESSAGE");
 
-        NavigationManager.NavigateTo("hotel-room");
-
+        //using extension
+        await JsRuntime.ToastrSuccess("Success Message");
     }
 
+    private async Task TestFailure()
+    {
+        //await JsRuntime.InvokeVoidAsync("ShowToastr", "error", "ERROR MESSAGE");
+        await JsRuntime.ToastrError("Error Message");
+    }
 
+    private async Task TestSuccessSwal()
+    {
+        //using common.js
+        await JsRuntime.InvokeVoidAsync("ShowSwal", "success", "OKIE DOKIE");
+    }
+
+    private async Task TestFailureSwal()
+    {
+        await JsRuntime.InvokeVoidAsync("ShowSwal", "error", "WRONG.");
+    }
 
 
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHotelRoomRepository HotelRoomRepository { get; set; }
     }
 }
 #pragma warning restore 1591
